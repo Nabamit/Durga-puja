@@ -293,6 +293,7 @@ export const Page2Schedule: React.FC = () => {
               {activeDay.rituals.map((ritual, idx) => (
                 <div
                   key={idx}
+                  className="ritual-item-card"
                   style={{
                     display: 'grid',
                     gridTemplateColumns: 'minmax(120px, 140px) 1fr',

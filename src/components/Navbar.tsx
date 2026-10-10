@@ -91,7 +91,7 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
           </span>
 
           <span
-            className="font-display"
+            className="font-display brand-english"
             style={{
               fontSize: '1.15rem',
               letterSpacing: '0.22em',

@@ -58,12 +58,12 @@ export const AudioPlayer: React.FC = () => {
         {isPlaying ? (
           <>
             <Volume2 size={16} className="flicker" color="#ffd98a" />
-            <span className="font-bn" style={{ letterSpacing: '0.02em', color: '#ffd98a' }}>ঢাক বাজছে...</span>
+            <span className="font-bn audio-player-text" style={{ letterSpacing: '0.02em', color: '#ffd98a' }}>ঢাক বাজছে...</span>
           </>
         ) : (
           <>
             <VolumeX size={16} opacity={0.65} />
-            <span className="font-bn" style={{ letterSpacing: '0.02em' }}>ঢাকের আওয়াজ</span>
+            <span className="font-bn audio-player-text" style={{ letterSpacing: '0.02em' }}>ঢাকের আওয়াজ</span>
           </>
         )}
       </button>
@@ -77,7 +77,7 @@ export const AudioPlayer: React.FC = () => {
         </div>
       )}
 
-      {/* Volume slider */}
+      {/* Volume slider (Hidden on small mobile) */}
       <input
         type="range"
         min="0"
@@ -85,6 +85,7 @@ export const AudioPlayer: React.FC = () => {
         step="0.05"
         value={volume}
         onChange={handleVolumeChange}
+        className="audio-player-slider"
         style={{
           width: '54px',
           height: '4px',

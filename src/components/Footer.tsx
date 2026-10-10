@@ -58,8 +58,8 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayOpening }) =
         <div
           style={{
             display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-            gap: '3rem',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))',
+            gap: '2.5rem',
             paddingBottom: '3.5rem',
             borderBottom: '1px solid rgba(201, 162, 75, 0.15)',
           }}

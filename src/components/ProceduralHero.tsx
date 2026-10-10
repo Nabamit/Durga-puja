@@ -112,10 +112,10 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
   return (
     <section
       id="hero"
+      className="hero-section"
       style={{
         position: 'relative',
-        height: '100svh',
-        minHeight: '640px',
+        height: '100dvh',
         overflow: 'hidden',
         backgroundColor: '#05060f',
       }}
@@ -427,7 +427,7 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
 
       {/* Hero Foreground Content — 100% Matching Pujo Smriti Layout */}
       <div
-        className="container"
+        className="container hero-content-container"
         style={{
           position: 'relative',
           zIndex: 10,
@@ -442,7 +442,7 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
         {/* Top Region & Season Tagline */}
         <p
           lang="bn"
-          className="font-bn"
+          className="font-bn hero-tagline"
           style={{
             fontSize: 'clamp(1.15rem, 2.2vw, 1.45rem)',
             color: '#ffd98a',
@@ -456,7 +456,7 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
         {/* Grand Literary Title */}
         <h1
           id="hero-title"
-          className="font-display"
+          className="font-display hero-title-main"
           style={{
             fontSize: 'clamp(3rem, 10vw, 7.8rem)',
             fontWeight: 500,
@@ -472,7 +472,7 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
 
         {/* Authentic Bengali Subtitle in Italic Cormorant / Tiro */}
         <p
-          className="font-display"
+          className="font-display hero-subtitle"
           style={{
             fontSize: 'clamp(1.35rem, 3.2vw, 2.2rem)',
             fontStyle: 'italic',
@@ -487,7 +487,7 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
 
         {/* Narrative Description Line */}
         <p
-          className="font-ui"
+          className="font-ui hero-desc"
           style={{
             fontSize: '0.96rem',
             color: 'rgba(239, 227, 204, 0.8)',
@@ -501,6 +501,7 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
 
         {/* Pujo-Smriti Two Action Pill Buttons */}
         <div
+          className="hero-buttons-container"
           style={{
             display: 'flex',
             flexWrap: 'wrap',
@@ -510,7 +511,7 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
         >
           <button
             type="button"
-            className="btn btn-primary"
+            className="btn btn-primary hero-btn"
             onClick={() => onNavigate('page-schedule')}
             style={{
               padding: '0.75rem 1.85rem',
@@ -518,19 +519,21 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
               boxShadow: '0 4px 20px rgba(179, 38, 30, 0.45)',
             }}
           >
-            <span className="font-bn">পূজোর নির্ঘণ্ট দেখুন (মহালয়া থেকে দশমী)</span>
+            <span className="font-bn hero-btn-text-full">পূজোর নির্ঘণ্ট দেখুন (মহালয়া থেকে দশমী)</span>
+            <span className="font-bn hero-btn-text-short">পূজোর নির্ঘণ্ট</span>
           </button>
 
           <button
             type="button"
-            className="btn btn-ghost"
+            className="btn btn-ghost hero-btn"
             onClick={() => onNavigate('page-intro')}
             style={{
               padding: '0.75rem 1.85rem',
               fontSize: '0.98rem',
             }}
           >
-            <span className="font-bn">আমাদের ৭০ বছরের ইতিহাস ও বার্তা</span>
+            <span className="font-bn hero-btn-text-full">আমাদের ৭০ বছরের ইতিহাস ও বার্তা</span>
+            <span className="font-bn hero-btn-text-short">৭০ বছরের ইতিহাস</span>
           </button>
         </div>
       </div>
