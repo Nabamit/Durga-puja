@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build
+dist/
+build/
+
+# Local environment / logs
+*.log
+*.tsbuildinfo
+.DS_Store
+Thumbs.db
+scratch/
+decompiled_source/
+pujo_smriti_technical_postmortem.md
+
+# Editor directories
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
