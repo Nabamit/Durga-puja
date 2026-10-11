@@ -1,5 +1,7 @@
+@import "tailwindcss";
+
 /* ==========================================================================
-   NABODAYA / DUYERPALLY DURGA PUJA PORTFOLIO — CORE DESIGN SYSTEM (VANILLA CSS)
+   NABODAYA / DUYERPALLY DURGA PUJA PORTFOLIO — CORE DESIGN SYSTEM (TAILWIND V4)
    Aesthetic Strategy inspired by Pujo Smriti (Midnight Blue, Crimson Sindoor, Antique Gold)
    Fully Optimized for Ultra-Small Mobile, Tablet, & Desktop Screens
    ========================================================================== */
@@ -360,18 +362,38 @@ body {
   }
 }
 
-/* 2. Compact Audio Widget & Header Adaptations for Mobile (< 540px) */
-@media (max-width: 540px) {
+/* 2. Mobile Header Controls & Hamburger Protection (< 768px) */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: flex !important;
+    flex-shrink: 0 !important;
+    align-items: center !important;
+    gap: 0.45rem !important;
+  }
+
+  .mobile-nav-toggle {
+    flex-shrink: 0 !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+
   .audio-player-slider {
     display: none !important;
   }
-}
 
-@media (max-width: 380px) {
-  .brand-english {
+  .audio-player-text {
     display: none !important;
   }
-  .audio-player-text {
+
+  .audio-player-pill {
+    padding: 0.35rem 0.55rem !important;
+    gap: 0.35rem !important;
+    flex-shrink: 0 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand-english {
     display: none !important;
   }
 }
@@ -412,7 +434,9 @@ body {
   .hero-content-container {
     justify-content: flex-start !important;
     padding-top: calc(42vh + 6px) !important;
-    padding-bottom: 1.5rem !important;
+    padding-left: clamp(1.25rem, 4.5vw, 1.75rem) !important;
+    padding-right: clamp(1.25rem, 4.5vw, 1.75rem) !important;
+    padding-bottom: 1.75rem !important;
   }
 
   .hero-tagline {
@@ -455,8 +479,9 @@ body {
     display: grid !important;
     grid-template-columns: 1fr 1fr !important;
     width: 100% !important;
-    gap: 0.55rem !important;
-    margin-top: 0.95rem !important;
+    gap: 0.65rem !important;
+    margin-top: 1.15rem !important;
+    margin-bottom: 0.5rem !important;
   }
 
   .hero-buttons-container .btn {
@@ -464,7 +489,7 @@ body {
     justify-content: center !important;
     white-space: nowrap !important;
     text-align: center !important;
-    padding: 0.65rem 0.75rem !important;
+    padding: 0.68rem 0.8rem !important;
     font-size: clamp(0.8rem, 2.9vw, 0.9rem) !important;
     border-radius: 9999px !important;
   }
@@ -482,13 +507,34 @@ body {
   .hero-section {
     min-height: 620px;
   }
+
+  .hero-content-container {
+    justify-content: flex-end !important;
+    padding-left: clamp(2.5rem, 6.5vw, 6.5rem) !important;
+    padding-right: clamp(2rem, 4vw, 4rem) !important;
+    padding-bottom: clamp(2.75rem, 6vh, 5rem) !important;
+    padding-top: 5rem !important;
+  }
+
+  .hero-buttons-container {
+    margin-top: clamp(1.5rem, 3.5vh, 2.5rem) !important;
+    margin-bottom: clamp(0.75rem, 1.8vh, 1.5rem) !important;
+    gap: clamp(0.85rem, 2vw, 1.35rem) !important;
+  }
+
+  .hero-buttons-container .btn {
+    padding: clamp(0.75rem, 1.6vh, 0.95rem) clamp(1.5rem, 2vw, 2.1rem) !important;
+    font-size: clamp(0.88rem, 1.2vw, 1.02rem) !important;
+  }
 }
 
 /* Extra Compact Mode for Shorter Phone Viewports (e.g., iPhone SE 375x667, 360x640) */
 @media (max-height: 720px) and (max-width: 640px) {
   .hero-content-container {
-    padding-bottom: 0.75rem !important;
     padding-top: calc(41.5vh + 4px) !important;
+    padding-left: 1.15rem !important;
+    padding-right: 1.15rem !important;
+    padding-bottom: 1rem !important;
   }
   .hero-title-main {
     font-size: clamp(1.75rem, 8vw, 2.35rem) !important;
@@ -512,11 +558,12 @@ body {
     margin-top: 0.15rem !important;
   }
   .hero-buttons-container {
-    margin-top: 0.5rem !important;
-    gap: 0.4rem !important;
+    margin-top: 0.65rem !important;
+    margin-bottom: 0.25rem !important;
+    gap: 0.45rem !important;
   }
   .hero-buttons-container .btn {
-    padding: 0.45rem 0.5rem !important;
+    padding: 0.5rem 0.6rem !important;
     font-size: 0.78rem !important;
   }
 }

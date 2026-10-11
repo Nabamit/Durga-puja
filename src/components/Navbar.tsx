@@ -40,101 +40,37 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
 
   return (
     <header
-      style={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        zIndex: 100,
-        background: isScrolled ? 'rgba(7, 9, 21, 0.88)' : 'rgba(7, 9, 21, 0.55)',
-        backdropFilter: 'blur(16px)',
-        borderBottom: '1px solid rgba(201, 162, 75, 0.15)',
-        transition: 'var(--transition-smooth)',
-      }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-[#c9a24b]/20 ${
+        isScrolled ? 'bg-[#070915]/90 backdrop-blur-md' : 'bg-[#070915]/65 backdrop-blur-sm'
+      }`}
     >
-      <div
-        className="container"
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          paddingTop: '0.8rem',
-          paddingBottom: '0.8rem',
-        }}
-      >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
         {/* Brand Identity — Exactly Matching Pujo Smriti Header */}
         <button
           type="button"
           onClick={() => handleNavClick('hero')}
-          style={{
-            background: 'none',
-            border: 'none',
-            cursor: 'pointer',
-            display: 'flex',
-            alignItems: 'baseline',
-            gap: '0.75rem',
-            textAlign: 'left',
-            padding: 0,
-          }}
+          className="flex items-center gap-2 text-left cursor-pointer shrink min-w-0 bg-transparent border-0 p-0"
         >
           <span
             lang="bn"
-            className="font-bn"
-            style={{
-              fontSize: '1.35rem',
-              color: '#ffd98a',
-              fontWeight: 700,
-              letterSpacing: '0.02em',
-            }}
+            className="font-bn text-xs min-[400px]:text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#ffd98a] tracking-wide shrink min-w-0 truncate drop-shadow-[0_0_12px_rgba(201,162,75,0.25)]"
+            title="দুয়েরপল্লী সার্ব্বজনীন দুর্গাপূজা কমিটি"
           >
-            দুয়েরপল্লী
+            দুয়েরপল্লী সার্ব্বজনীন দুর্গাপূজা কমিটি
           </span>
 
-          <span
-            className="font-display brand-english"
-            style={{
-              fontSize: '1.15rem',
-              letterSpacing: '0.22em',
-              color: 'var(--cream)',
-              fontWeight: 500,
-            }}
-          >
+          <span className="hidden xl:inline-block font-display text-xs sm:text-sm tracking-[0.2em] text-[#faf5ea] font-medium opacity-90 truncate">
             DUYERPALLY
           </span>
 
-          <span
-            className="font-ui desktop-only-inline"
-            style={{
-              fontSize: '0.72rem',
-              color: 'rgba(239, 227, 204, 0.5)',
-              letterSpacing: '0.08em',
-              textTransform: 'uppercase',
-              borderLeft: '1px solid rgba(201, 162, 75, 0.3)',
-              paddingLeft: '0.65rem',
-              marginLeft: '0.2rem',
-            }}
-          >
+          <span className="hidden 2xl:inline-block text-[0.7rem] uppercase tracking-wider text-[#efe3cc]/50 border-l border-[#c9a24b]/30 pl-2 ml-1">
             70th Year · 1956 - 2026
           </span>
         </button>
 
         {/* Desktop Navigation Links */}
-        <nav
-          style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '2rem',
-          }}
-          className="desktop-nav"
-        >
-          <ul
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: '1.4rem',
-              listStyle: 'none',
-            }}
-          >
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
+          <ul className="flex items-center gap-5 list-none m-0 p-0">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -142,27 +78,13 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
                   <button
                     type="button"
                     onClick={() => handleNavClick(link.id)}
-                    style={{
-                      background: 'none',
-                      border: 'none',
-                      color: isActive ? '#ffd98a' : 'rgba(239, 227, 204, 0.8)',
-                      fontFamily: 'var(--font-ui)',
-                      fontSize: '0.92rem',
-                      fontWeight: isActive ? 600 : 400,
-                      cursor: 'pointer',
-                      padding: '0.25rem 0',
-                      position: 'relative',
-                      transition: 'color 0.2s ease',
-                      borderBottom: isActive ? '2px solid #ffd98a' : '2px solid transparent',
-                    }}
-                    onMouseEnter={(e) => {
-                      if (!isActive) e.currentTarget.style.color = '#ffd98a';
-                    }}
-                    onMouseLeave={(e) => {
-                      if (!isActive) e.currentTarget.style.color = 'rgba(239, 227, 204, 0.8)';
-                    }}
+                    className={`font-bn text-sm font-medium transition-colors cursor-pointer py-1 border-b-2 bg-transparent ${
+                      isActive
+                        ? 'text-[#ffd98a] border-[#ffd98a]'
+                        : 'text-[#efe3cc]/80 border-transparent hover:text-[#ffd98a]'
+                    }`}
                   >
-                    <span className="font-bn">{link.labelBn}</span>
+                    {link.labelBn}
                   </button>
                 </li>
               );
@@ -174,22 +96,12 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
         </nav>
 
         {/* Mobile Nav Toggle */}
-        <div className="mobile-only" style={{ display: 'none', alignItems: 'center', gap: '0.75rem' }}>
+        <div className="flex md:hidden items-center gap-2.5 shrink-0">
           <AudioPlayer />
           <button
             type="button"
+            className="w-10 h-10 rounded-full border border-[#c9a24b]/35 bg-[#0b0e1f]/85 text-[#faf5ea] flex items-center justify-center cursor-pointer shrink-0 hover:border-[#ffd98a] transition-all"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            style={{
-              width: '42px',
-              height: '42px',
-              borderRadius: '50%',
-              background: 'rgba(11, 14, 31, 0.85)',
-              border: '1px solid rgba(201, 162, 75, 0.35)',
-              color: 'var(--cream)',
-              display: 'grid',
-              placeItems: 'center',
-              cursor: 'pointer',
-            }}
             aria-label="Toggle navigation menu"
           >
             {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
@@ -200,43 +112,24 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
       {/* Top Scroll Indicator Line (Pujo Smriti Signature) */}
       <div
         aria-hidden="true"
-        style={{
-          height: '2px',
-          width: `${scrollProgress}%`,
-          background: 'linear-gradient(90deg, var(--sindoor), var(--gold), var(--gold-light))',
-          transition: 'width 0.1s ease-out',
-        }}
+        className="h-[2px] bg-gradient-to-r from-[#b3261e] via-[#c9a24b] to-[#ffd98a] transition-all duration-100"
+        style={{ width: `${scrollProgress}%` }}
       />
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div
-          style={{
-            background: 'rgba(7, 9, 21, 0.98)',
-            borderTop: '1px solid var(--ink-border)',
-            padding: '1.25rem 1.5rem',
-            animation: 'fadeIn 0.2s ease-out',
-          }}
-        >
-          <ul style={{ listStyle: 'none', display: 'grid', gap: '0.65rem' }}>
+        <div className="md:hidden bg-[#070915]/95 backdrop-blur-xl border-t border-[#c9a24b]/20 px-4 py-4 animate-fadeIn">
+          <ul className="grid gap-2 list-none p-0 m-0">
             {navLinks.map((link) => (
               <li key={link.id}>
                 <button
                   type="button"
                   onClick={() => handleNavClick(link.id)}
-                  style={{
-                    width: '100%',
-                    padding: '0.75rem 1rem',
-                    background: activeSection === link.id ? 'rgba(201, 162, 75, 0.15)' : 'transparent',
-                    border: '1px solid',
-                    borderColor: activeSection === link.id ? 'var(--gold)' : 'transparent',
-                    borderRadius: '8px',
-                    color: activeSection === link.id ? '#ffd98a' : 'var(--paper)',
-                    fontFamily: 'var(--font-bn)',
-                    fontSize: '1.05rem',
-                    cursor: 'pointer',
-                    textAlign: 'left',
-                  }}
+                  className={`w-full px-4 py-3 text-left font-bn text-base rounded-lg border transition-all cursor-pointer ${
+                    activeSection === link.id
+                      ? 'bg-[#c9a24b]/15 border-[#c9a24b] text-[#ffd98a]'
+                      : 'border-transparent text-[#efe3cc] hover:bg-white/5'
+                  }`}
                 >
                   {link.labelBn} ({link.labelEn})
                 </button>

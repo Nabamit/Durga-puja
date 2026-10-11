@@ -25,59 +25,42 @@ export const AudioPlayer: React.FC = () => {
 
   return (
     <div
-      style={{
-        display: 'inline-flex',
-        alignItems: 'center',
-        gap: '0.65rem',
-        padding: '0.35rem 0.85rem',
-        background: isPlaying ? 'rgba(179, 38, 30, 0.28)' : 'rgba(17, 21, 46, 0.7)',
-        border: `1px solid ${isPlaying ? 'var(--gold-light)' : 'var(--ink-border)'}`,
-        borderRadius: '9999px',
-        backdropFilter: 'blur(8px)',
-        transition: 'var(--transition-smooth)',
-      }}
+      className={`inline-flex items-center gap-2 px-2.5 sm:px-3 py-1.5 rounded-full border backdrop-blur-md transition-all shrink-0 ${
+        isPlaying
+          ? 'bg-[#b3261e]/25 border-[#ffd98a]'
+          : 'bg-[#11152e]/70 border-[#c9a24b]/20 hover:border-[#c9a24b]/50'
+      }`}
     >
       <button
         type="button"
         onClick={handleToggle}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '0.45rem',
-          background: 'none',
-          border: 'none',
-          color: isPlaying ? 'var(--gold-light)' : 'var(--paper)',
-          cursor: 'pointer',
-          fontFamily: 'var(--font-ui)',
-          fontSize: '0.82rem',
-          fontWeight: 500,
-        }}
+        className="flex items-center gap-1.5 bg-transparent border-0 cursor-pointer font-ui text-xs sm:text-sm font-medium p-0"
         title={isPlaying ? 'ঢাকের আওয়াজ বন্ধ করুন (Mute Dhak)' : 'ঢাকের আওয়াজ বাজান (Play Dhak)'}
         aria-label={isPlaying ? 'ঢাকের আওয়াজ বন্ধ করুন (Mute Dhak)' : 'ঢাকের আওয়াজ বাজান (Play Dhak)'}
       >
         {isPlaying ? (
           <>
-            <Volume2 size={16} className="flicker" color="#ffd98a" />
-            <span className="font-bn audio-player-text" style={{ letterSpacing: '0.02em', color: '#ffd98a' }}>ঢাক বাজছে...</span>
+            <Volume2 size={16} className="text-[#ffd98a] animate-pulse" />
+            <span className="hidden sm:inline font-bn text-[#ffd98a] tracking-wide">ঢাক বাজছে...</span>
           </>
         ) : (
           <>
-            <VolumeX size={16} opacity={0.65} />
-            <span className="font-bn audio-player-text" style={{ letterSpacing: '0.02em' }}>ঢাকের আওয়াজ</span>
+            <VolumeX size={16} className="text-[#efe3cc]/70" />
+            <span className="hidden sm:inline font-bn text-[#efe3cc] tracking-wide">ঢাকের আওয়াজ</span>
           </>
         )}
       </button>
 
       {/* Animated Visual Equalizer Bars */}
       {isPlaying && (
-        <div style={{ display: 'flex', alignItems: 'center', gap: '2px', height: '14px' }}>
-          <span style={{ width: '3px', height: '100%', background: '#ffd98a', borderRadius: '1px', animation: 'flicker 0.4s infinite alternate' }} />
-          <span style={{ width: '3px', height: '65%', background: '#ff9d5c', borderRadius: '1px', animation: 'flicker 0.7s infinite alternate' }} />
-          <span style={{ width: '3px', height: '85%', background: '#ffd98a', borderRadius: '1px', animation: 'flicker 0.5s infinite alternate' }} />
+        <div className="flex items-center gap-[2px] h-3.5">
+          <span className="w-[3px] h-full bg-[#ffd98a] rounded-sm animate-pulse" />
+          <span className="w-[3px] h-2/3 bg-[#ff9d5c] rounded-sm animate-pulse delay-75" />
+          <span className="w-[3px] h-5/6 bg-[#ffd98a] rounded-sm animate-pulse delay-150" />
         </div>
       )}
 
-      {/* Volume slider (Hidden on small mobile) */}
+      {/* Volume slider (Hidden on mobile) */}
       <input
         type="range"
         min="0"
@@ -85,14 +68,7 @@ export const AudioPlayer: React.FC = () => {
         step="0.05"
         value={volume}
         onChange={handleVolumeChange}
-        className="audio-player-slider"
-        style={{
-          width: '54px',
-          height: '4px',
-          accentColor: '#c9a24b',
-          cursor: 'pointer',
-          opacity: isPlaying ? 0.9 : 0.4,
-        }}
+        className="hidden md:inline-block w-12 h-1 accent-[#c9a24b] cursor-pointer opacity-70 hover:opacity-100"
         title="Volume"
         aria-label="Dhak Volume"
       />

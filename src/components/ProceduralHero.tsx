@@ -425,30 +425,12 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
         }}
       />
 
-      {/* Hero Foreground Content — 100% Matching Pujo Smriti Layout */}
-      <div
-        className="container hero-content-container"
-        style={{
-          position: 'relative',
-          zIndex: 10,
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-end',
-          paddingBottom: '3.5rem',
-          paddingTop: '6rem',
-        }}
-      >
+      {/* Hero Foreground Content — Exact Pujo Smriti Cinematic Composition */}
+      <div className="hero-content-container relative z-10 max-w-7xl mx-auto h-full flex flex-col justify-start md:justify-end pt-[calc(42vh+6px)] md:pt-20 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-28 pb-8 sm:pb-12 md:pb-16 lg:pb-20">
         {/* Top Region & Season Tagline */}
         <p
           lang="bn"
-          className="font-bn hero-tagline"
-          style={{
-            fontSize: 'clamp(1.15rem, 2.2vw, 1.45rem)',
-            color: '#ffd98a',
-            marginBottom: '0.25rem',
-            letterSpacing: '0.04em',
-          }}
+          className="hero-tagline font-bn text-xs sm:text-sm md:text-base text-[#ffd98a] tracking-wide mb-1 sm:mb-2"
         >
           কলকাতা · আশ্বিন · ৭০তম বর্ষপূর্তি উৎসব (১৯৫৬ - ২০২৬)
         </p>
@@ -456,84 +438,39 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
         {/* Grand Literary Title */}
         <h1
           id="hero-title"
-          className="font-display hero-title-main"
-          style={{
-            fontSize: 'clamp(3rem, 10vw, 7.8rem)',
-            fontWeight: 500,
-            lineHeight: 0.92,
-            letterSpacing: '0.04em',
-            color: 'var(--cream)',
-            margin: '0.2rem 0',
-            textShadow: '0 4px 30px rgba(0, 0, 0, 0.9)',
-          }}
+          className="hero-title-main font-display text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-medium tracking-wide text-[#faf5ea] leading-[0.92] drop-shadow-2xl my-1 sm:my-2"
         >
           DUYERPALLY
         </h1>
 
-        {/* Authentic Bengali Subtitle in Italic Cormorant / Tiro */}
-        <p
-          className="font-display hero-subtitle"
-          style={{
-            fontSize: 'clamp(1.35rem, 3.2vw, 2.2rem)',
-            fontStyle: 'italic',
-            lineHeight: 1.25,
-            color: 'var(--paper)',
-            maxWidth: '680px',
-            marginTop: '0.85rem',
-          }}
-        >
+        {/* Authentic Bengali Subtitle */}
+        <p className="hero-subtitle font-display text-base sm:text-xl md:text-2xl italic text-[#efe3cc] mt-1.5 sm:mt-2.5 max-w-2xl">
           {COMMITTEE_METADATA.committeeNameBn}
         </p>
 
         {/* Narrative Description Line */}
-        <p
-          className="font-ui hero-desc"
-          style={{
-            fontSize: '0.96rem',
-            color: 'rgba(239, 227, 204, 0.8)',
-            maxWidth: '560px',
-            marginTop: '0.65rem',
-            lineHeight: 1.6,
-          }}
-        >
+        <p className="hero-desc font-ui text-xs sm:text-sm md:text-base text-[#efe3cc]/85 max-w-lg mt-2 sm:mt-3 leading-relaxed line-clamp-2 sm:line-clamp-none">
           কাশীপুর অঞ্চলের অন্যতম ঐতিহ্যবাহী সার্বজনীন দুর্গোৎসব। ১৯৫৬ সালে প্রতিষ্ঠিত এই শারদ মহাযজ্ঞে আপনাকে ও আপনার পরিবারকে সাদর আমন্ত্রণ।
         </p>
 
-        {/* Pujo-Smriti Two Action Pill Buttons */}
-        <div
-          className="hero-buttons-container"
-          style={{
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.85rem',
-            marginTop: '1.75rem',
-          }}
-        >
+        {/* Action Buttons with Proper Margin and Elevated Spacing */}
+        <div className="hero-buttons-container flex flex-row flex-wrap sm:flex-nowrap gap-3 sm:gap-4 md:gap-5 mt-5 sm:mt-7 md:mt-8 mb-2 sm:mb-4 md:mb-6 w-full sm:w-auto">
           <button
             type="button"
-            className="btn btn-primary hero-btn"
+            className="btn btn-primary flex-1 sm:flex-none justify-center px-5 sm:px-7 py-3 sm:py-3.5 rounded-full bg-gradient-to-r from-[#b3261e] to-[#841812] text-xs sm:text-sm md:text-base font-medium text-[#faf5ea] shadow-xl shadow-[#b3261e]/45 border border-[#ffd98a]/35 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer text-center"
             onClick={() => onNavigate('page-schedule')}
-            style={{
-              padding: '0.75rem 1.85rem',
-              fontSize: '0.98rem',
-              boxShadow: '0 4px 20px rgba(179, 38, 30, 0.45)',
-            }}
           >
-            <span className="font-bn hero-btn-text-full">পূজোর নির্ঘণ্ট দেখুন (মহালয়া থেকে দশমী)</span>
-            <span className="font-bn hero-btn-text-short">পূজোর নির্ঘণ্ট</span>
+            <span className="font-bn hidden sm:inline">পূজোর নির্ঘণ্ট দেখুন (মহালয়া থেকে দশমী)</span>
+            <span className="font-bn sm:hidden">পূজোর নির্ঘণ্ট</span>
           </button>
 
           <button
             type="button"
-            className="btn btn-ghost hero-btn"
+            className="btn btn-ghost flex-1 sm:flex-none justify-center px-5 sm:px-7 py-3 sm:py-3.5 rounded-full border border-[#efe3cc]/35 bg-[#070915]/65 backdrop-blur-md text-xs sm:text-sm md:text-base font-medium text-[#efe3cc] hover:border-[#ffd98a]/70 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer text-center"
             onClick={() => onNavigate('page-intro')}
-            style={{
-              padding: '0.75rem 1.85rem',
-              fontSize: '0.98rem',
-            }}
           >
-            <span className="font-bn hero-btn-text-full">আমাদের ৭০ বছরের ইতিহাস ও বার্তা</span>
-            <span className="font-bn hero-btn-text-short">৭০ বছরের ইতিহাস</span>
+            <span className="font-bn hidden sm:inline">আমাদের ৭০ বছরের ইতিহাস ও বার্তা</span>
+            <span className="font-bn sm:hidden">৭০ বছরের ইতিহাস</span>
           </button>
         </div>
       </div>
