@@ -426,7 +426,7 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
       />
 
       {/* Hero Foreground Content — Exact Pujo Smriti Cinematic Composition */}
-      <div className="hero-content-container relative z-10 max-w-7xl mx-auto h-full flex flex-col justify-start md:justify-end pt-[calc(42vh+6px)] md:pt-20 px-6 sm:px-12 md:px-16 lg:px-24 xl:px-28 pb-8 sm:pb-12 md:pb-16 lg:pb-20">
+      <div className="hero-content-container relative z-10 max-w-7xl mx-auto h-full flex flex-col justify-start md:justify-end pt-[calc(42vh+6px)] md:pt-20 px-8 sm:px-14 md:px-20 lg:px-28 xl:px-32 pb-8 sm:pb-12 md:pb-16 lg:pb-20">
         {/* Top Region & Season Tagline */}
         <p
           lang="bn"

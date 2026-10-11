@@ -44,27 +44,19 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection, onNavigate }) => 
         isScrolled ? 'bg-[#070915]/90 backdrop-blur-md' : 'bg-[#070915]/65 backdrop-blur-sm'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-3">
-        {/* Brand Identity — Exactly Matching Pujo Smriti Header */}
+      <div className="navbar-container max-w-7xl mx-auto px-6 sm:px-10 md:px-14 lg:px-20 xl:px-24 h-16 flex items-center justify-between gap-4">
+        {/* Brand Identity — Authentic Bengali Committee Name (No English DUYERPALLY) */}
         <button
           type="button"
           onClick={() => handleNavClick('hero')}
-          className="flex items-center gap-2 text-left cursor-pointer shrink min-w-0 bg-transparent border-0 p-0"
+          className="navbar-brand-btn flex items-center gap-2 text-left cursor-pointer shrink min-w-0 bg-transparent border-0 p-0"
         >
           <span
             lang="bn"
-            className="font-bn text-xs min-[400px]:text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#ffd98a] tracking-wide shrink min-w-0 truncate drop-shadow-[0_0_12px_rgba(201,162,75,0.25)]"
+            className="font-bn text-sm sm:text-base md:text-lg lg:text-xl font-bold text-[#ffd98a] tracking-wide shrink min-w-0 truncate drop-shadow-[0_0_12px_rgba(201,162,75,0.25)]"
             title="দুয়েরপল্লী সার্ব্বজনীন দুর্গাপূজা কমিটি"
           >
             দুয়েরপল্লী সার্ব্বজনীন দুর্গাপূজা কমিটি
-          </span>
-
-          <span className="hidden xl:inline-block font-display text-xs sm:text-sm tracking-[0.2em] text-[#faf5ea] font-medium opacity-90 truncate">
-            DUYERPALLY
-          </span>
-
-          <span className="hidden 2xl:inline-block text-[0.7rem] uppercase tracking-wider text-[#efe3cc]/50 border-l border-[#c9a24b]/30 pl-2 ml-1">
-            70th Year · 1956 - 2026
           </span>
         </button>
 
