@@ -450,7 +450,7 @@ export const ProceduralHero: React.FC<ProceduralHeroProps> = ({ onNavigate }) =>
 
         {/* Narrative Description Line */}
         <p className="hero-desc font-ui text-xs sm:text-sm md:text-base text-[#efe3cc]/85 max-w-lg mt-2 sm:mt-3 leading-relaxed line-clamp-2 sm:line-clamp-none">
-          কাশীপুর অঞ্চলের অন্যতম ঐতিহ্যবাহী সার্বজনীন দুর্গোৎসব। ১৯৫৬ সালে প্রতিষ্ঠিত এই শারদ মহাযজ্ঞে আপনাকে ও আপনার পরিবারকে সাদর আমন্ত্রণ।
+          বরানগর অঞ্চলের অন্যতম ঐতিহ্যবাহী সার্বজনীন দুর্গোৎসব। ১৯৫৬ সালে প্রতিষ্ঠিত এই শারদ মহাযজ্ঞে আপনাকে ও আপনার পরিবারকে সাদর আমন্ত্রণ।
         </p>
 
         {/* Action Buttons with Proper Margin and Elevated Spacing */}
