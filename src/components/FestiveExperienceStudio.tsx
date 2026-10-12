@@ -781,7 +781,7 @@ export const FestiveExperienceStudio: React.FC = () => {
               )}
 
               <p className="font-ui" style={{ fontSize: '0.75rem', color: 'rgba(239, 227, 204, 0.45)', marginTop: '1.75rem' }}>
-                মণ্ডপ প্রাঙ্গণ: কাশীপুর রোড, কলকাতা - ৭০০০৩৬
+                মণ্ডপ প্রাঙ্গণ: দুয়েরপল্লী, কলকাতা - ৭০০০৩৬
               </p>
             </div>
           </div>

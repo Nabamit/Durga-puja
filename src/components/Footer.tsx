@@ -92,10 +92,6 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onReplayOpening }) =
             <p className="font-bn" style={{ fontSize: '0.92rem', color: 'var(--paper-muted)', lineHeight: 1.7 }}>
               উত্তর কলকাতার অন্যতম ঐতিহ্যবাহী সার্বজনীন দুর্গোৎসব। ১৯৫৬ সালে প্রতিষ্ঠিত এবং ২০২৬-এ গৌরবময় ৭০তম বর্ষে পাড়ার প্রতিটি মানুষের ভালোবাসা ও সহযোগিতায় আমরা গৌরবান্বিত।
             </p>
-
-            <p className="font-ui" style={{ fontSize: '0.82rem', color: 'rgba(239, 227, 204, 0.45)', marginTop: '1rem' }}>
-              গভর্নমেন্ট রেজিস্ট্রেশন নং: {COMMITTEE_METADATA.registeredRegNo}
-            </p>
           </div>
 
           {/* Column 2: Venue & Location */}

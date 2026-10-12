@@ -38,7 +38,7 @@ export const Page2Schedule: React.FC = () => {
   const handleShareSchedule = async () => {
     const textToShare = `দুয়েরপল্লী সার্ব্বজনীন দুর্গাপূজা কমিটি ২০২৬ (৭০তম বর্ষপূর্তি · ১৯৫৬ - ২০২৬)\n${activeDay.tithiBn} (${activeDay.date})\n${activeDay.taglineBn}\n\nপ্রধান সময়সূচি:\n${activeDay.rituals
       .map((r) => `• ${r.time} - ${r.ritualBn}`)
-      .join('\n')}\n\nস্থান: দুয়েরপল্লী প্রাঙ্গণ, কাশীপুর, কলকাতা - ৭০০০৩৬।`;
+      .join('\n')}\n\nস্থান: দুয়েরপল্লী প্রাঙ্গণ, কলকাতা - ৭০০০৩৬।`;
 
     if (navigator.share) {
       try {

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shield, Phone, Mail, Award, Users, HeartHandshake, CheckCircle2, Hammer, UserCheck } from 'lucide-react';
+import { Shield, Award, Users, HeartHandshake, CheckCircle2, Hammer, UserCheck, Phone } from 'lucide-react';
 import {
   COMMITTEE_MEMBERS,
   COMMITTEE_METADATA,
@@ -121,8 +121,9 @@ export const Page3Committee: React.FC = () => {
                     <span className="font-bn">{member.badgeBn}</span>
                   </span>
 
-                  <span className="font-ui" style={{ fontSize: '0.82rem', color: 'var(--paper-muted)' }}>
-                    অভিজ্ঞতা: {member.experienceYears} বছর
+                  <span className="font-ui" style={{ color: '#74d99f', fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.25rem' }}>
+                    <CheckCircle2 size={13} />
+                    <span>সেবায় নিবেদিত</span>
                   </span>
                 </div>
 
@@ -167,50 +168,43 @@ export const Page3Committee: React.FC = () => {
                 </blockquote>
               </div>
 
-              {/* Direct Contact Links */}
+              {/* Committee Role Card Footer */}
               <div
                 style={{
-                  paddingTop: '1rem',
+                  paddingTop: '0.85rem',
                   borderTop: '1px solid var(--ink-border)',
                   display: 'flex',
-                  flexWrap: 'wrap',
-                  gap: '1rem',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
                   fontSize: '0.85rem',
-                  fontFamily: 'var(--font-ui)',
                 }}
               >
-                {member.phone && (
+                {member.phone ? (
                   <a
                     href={`tel:${member.phone.replace(/\s+/g, '')}`}
                     style={{
-                      display: 'flex',
+                      display: 'inline-flex',
                       alignItems: 'center',
-                      gap: '0.35rem',
-                      color: 'var(--paper-muted)',
+                      gap: '0.4rem',
+                      color: '#ffd98a',
                       textDecoration: 'none',
+                      fontWeight: 600,
+                      fontFamily: 'var(--font-ui)',
                     }}
                     className="hover-gold"
                   >
                     <Phone size={14} color="#ffd98a" />
                     <span>{member.phone}</span>
                   </a>
+                ) : (
+                  <span className="font-bn" style={{ color: 'var(--gold-light)', display: 'flex', alignItems: 'center', gap: '0.35rem' }}>
+                    <Users size={14} />
+                    <span>পরিচালন পরিষদ</span>
+                  </span>
                 )}
-                {member.email && (
-                  <a
-                    href={`mailto:${member.email}`}
-                    style={{
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '0.35rem',
-                      color: 'var(--paper-muted)',
-                      textDecoration: 'none',
-                    }}
-                    className="hover-gold"
-                  >
-                    <Mail size={14} color="#ffd98a" />
-                    <span>{member.email}</span>
-                  </a>
-                )}
+                <span className="font-bn" style={{ color: 'var(--paper-muted)', fontSize: '0.82rem' }}>
+                  ৭০তম বর্ষ শারদোৎসব
+                </span>
               </div>
             </div>
           ))}
@@ -455,9 +449,23 @@ export const Page3Committee: React.FC = () => {
 
                 <div style={{ padding: '0.85rem 1rem', background: 'rgba(7, 9, 21, 0.5)', borderRadius: '6px' }}>
                   <span className="font-bn" style={{ fontSize: '0.85rem', color: 'var(--gold-light)' }}>সাংস্কৃতিক অনুষ্ঠান ও অংশগ্রহণ:</span>
-                  <p className="font-bn" style={{ fontSize: '1.05rem', color: '#ff9d5c', fontWeight: 600 }}>
-                    গৌতম দা (মোবাইল: ৯৮৮৩০২৬৮৫৭)
-                  </p>
+                  <a
+                    href="tel:+919883026857"
+                    style={{
+                      fontSize: '1.05rem',
+                      color: '#ff9d5c',
+                      fontWeight: 600,
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '0.4rem',
+                      textDecoration: 'none',
+                      marginTop: '0.2rem',
+                    }}
+                    className="font-bn hover-gold"
+                  >
+                    <Phone size={14} color="#ffd98a" />
+                    <span>শ্রী গৌতম রায় চৌধুরী (+৯১ ৯৮৮৩০২৬৮৫৭)</span>
+                  </a>
                 </div>
 
                 <div style={{ padding: '0.85rem 1rem', background: 'rgba(7, 9, 21, 0.5)', borderRadius: '6px' }}>
@@ -468,10 +476,6 @@ export const Page3Committee: React.FC = () => {
                 </div>
               </div>
             </div>
-
-            <p className="font-ui" style={{ fontSize: '0.8rem', color: 'var(--paper-muted)', marginTop: '1.25rem' }}>
-              রেজিস্ট্রেশন নং: {COMMITTEE_METADATA.registeredRegNo}
-            </p>
           </div>
         </div>
       </div>
